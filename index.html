@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexEther</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/459a3c1902.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div id="loading-screen">
+        <div id="loading-spinner"></div>
+        <p>Loading...</p>
+    </div>
+    <nav>
+        <a href="#" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#reviews" class="nav-link">Review</a>
+        <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <h1>Welcome to NexEther</h1>
+            <p>Blockchain solutions reimagined for the future</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+    
+    <main>
+        <section class="founder-message fade-in">
+            <h2>Message from the Founder</h2>
+            <p>At NexEther, our goal is to create decentralized solutions that challenge conventional norms and empower users with transparency and control. We believe that with the right team, we can create a lasting impact in the world of blockchain and decentralized systems.</p>
+            <p>Each of you plays a pivotal role in shaping this journey. I encourage you to take ownership of your work, maintain a spirit of creativity, and always support one another as we grow. This handbook is designed to guide you through our company culture, policies, and best practices.</p>
+            <p>Let's continue to build something great together.</p>
+            <p><strong>Regards,<br>Founder & CEO<br>NIRANJAN JR</strong></p>
+        </section>
+
+        <section id="about" class="fade-in">
+            <div class="about-content">
+                <h2>About NexEther</h2>
+                <p>NexEther is a blockchain startup focused on creating decentralized solutions for modern businesses and individuals. We are committed to building systems that leverage the power of blockchain to provide security, efficiency, and transparency in an ever-evolving digital world.</p>
+                <p>Whether it's supply chain management, financial services, or digital identity, our mission is to bring decentralization to the forefront, enabling users to have greater control over their data and processes.</p>
+                <p>Our products are designed to tackle some of the biggest challenges faced by industries today, including data integrity, privacy, and operational transparency. From decentralized identity solutions to tokenization of assets, we are constantly pushing the boundaries of what is possible with this revolutionary technology.</p>
+            </div>
+        </section>
+
+        <section id="products" class="fade-in">
+            <h2 class="section-heading">Our Products</h2>
+        
+            <div class="products-content">
+                <div class="product-item">
+                    <img src="work-1.png" alt="">
+                    <div class="product-overlay">
+                        <h3>Product 1</h3>
+                        <p>Decentralized Identity Solutions</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <img src="work-2.png" alt="">
+                    <div class="product-overlay">
+                        <h3>Product 2</h3>
+                        <p>Supply Chain Management</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <img src="work-3.png" alt="">
+                    <div class="product-overlay">
+                        <h3>Product 3</h3>
+                        <p>Tokenization of Assets</p>
+                    </div>
+                </div>
+                
+                <div class="product-item">
+                    <img src="work-4.png" alt="">
+                    <div class="product-overlay">
+                        <h3>Product 4</h3>
+                        <p>Digital Identity & Privacy</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="reviews" class="fade-in">
+            <h2>Reviews</h2>
+            <p>Our customers love our products and services! Here's what they have to say...</p>
+        </section>
+    </main>
+    <div class="contact-container">
+        <h2 class="contact-heading">Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-left">
+                <p><i class="fas fa-phone"></i> +91 8861644090</p>
+                <p><i class="fas fa-envelope"></i> varshini021nexether@gmail.com</p>
+            </div>
+            <div class="contact-right">
+                <p><i class="fas fa-phone"></i> +91 8861644090</p>
+                <p><i class="fas fa-envelope"></i> raptor@nexether.com</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/varshini.ammu.716/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/magical_soul__28?igsh=N2JnMW5tY2R0dWZ0" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/yourtwitterprofile" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/varshini-m-25349527b/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>copyright © NexEther.All rights reserved</p>
+    </div>
+
+    <button id="homeArrowButton" class="home-arrow-button">&#8593;</button>
+
+    <script>
+        const homeArrowButton = document.getElementById("homeArrowButton");
+        homeArrowButton.onclick = function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
+            const backToTopButton = document.getElementById('homeArrowButton');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+                mainContent.style.display = 'block';
+            }, 1000);
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        e.preventDefault();
+                        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            const sections = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
